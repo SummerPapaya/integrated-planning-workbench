@@ -1,5 +1,9 @@
 # Integrated Planning Workbench｜计划与品类决策
 
+<p align="center">
+  <img src="./assets/readme/hero-bilingual.svg" width="100%" alt="Integrated Planning Workbench｜计划与品类决策：比较预测、推演 PSI 情景、人工复核品类行动。曲线与矩阵为流程示意。">
+</p>
+
 面向需求计划员与品类经理的可运行决策原型，将 **预测擂台 → PSI 决策台 → 品类行动台** 放在同一业务范围中。采用浏览器原生 HTML、CSS 和 JavaScript，无须安装依赖、账户或 API key。
 
 这是工作台的独立仓库：[SummerPapaya/integrated-planning-workbench](https://github.com/SummerPapaya/integrated-planning-workbench)。作品集介绍见 [Supply Chain Lab](https://supply-chain-lab.summercommences.com/)。
@@ -59,3 +63,9 @@ git config core.hooksPath .githooks
 - [Power BI 对照案例规划](docs/reference/power-bi-counterpart-project-plan.html)
 
 目录：`docs/` 是可独立托管的完整站点，`docs/method-case/` 保留原叙述案例，`docs/reference/` 保存辅助分析，`scripts/` 保存构建与校验工具。
+
+---
+
+<p>
+  <a href="https://github.com/oil-oil/beautify-github-readme"><img src="./assets/readme/made-with-beautify.svg" width="320" alt="README made with beautify-github-readme"></a>
+</p>

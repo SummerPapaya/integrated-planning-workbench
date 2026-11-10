@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Integrated Planning Workbench · 计划与品类决策</title>
+  <desc id="hero-desc">A bilingual planning workbench hero: compare demand forecasts, simulate PSI, and review category actions. Animated paths follow that sequence while the title remains visible. The charts are conceptual workflow illustrations, not business results. 中英双语计划工作台头图：比较需求预测、推演 PSI 库存情景、人工复核品类行动。动画仅演示工作流，曲线与矩阵为示意，不表示实际效果。</desc>
+  <defs>
+    <style>
+      .sans{font-family:'Avenir Next',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+      .mono{font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
+      .trace{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <rect width="1200" height="600" fill="#242a26"/>
+
+  <g id="identity" class="mono" font-size="17" letter-spacing="1.2" fill="#b7b9ad">
+    <text x="64" y="53">SUPPLY CHAIN / DECISION SYSTEMS</text>
+    <text x="1136" y="53" text-anchor="end" fill="#d58a63">IPW — 01</text>
+  </g>
+
+  <g id="project-title" class="sans" fill="#f6f2e9" font-weight="650" letter-spacing="-3.7">
+    <text x="58" y="150" font-size="94">Integrated</text>
+    <text x="59" y="231" font-size="75">Planning Workbench</text>
+  </g>
+
+  <g id="chinese-title" class="sans" fill="#e7dfd1" font-size="36" font-weight="550" letter-spacing="2">
+    <text x="930" y="155">计划与</text>
+    <text x="930" y="205">品类决策</text>
+  </g>
+  <path id="planning-route" d="M933 102 H975 L997 80 H1080" class="trace" stroke="#c67b55" stroke-width="2"/>
+  <circle cx="933" cy="102" r="3" fill="#c67b55"/>
+  <circle cx="1080" cy="80" r="3" fill="#c67b55"/>
+
+  <g id="value" class="sans">
+    <text x="64" y="281" font-size="25" fill="#e0dbcf">以预测证据推演库存，让品类行动有据可查。</text>
+    <text x="64" y="313" font-size="22" fill="#afb5a9">Compare forecasts. Test assumptions. Review actions.</text>
+  </g>
+
+  <!-- A single planning sheet, not three dashboard cards. -->
+  <rect x="40" y="343" width="1120" height="201" fill="#f3f0e7"/>
+
+  <g id="workflow-labels" class="sans" fill="#292f2a">
+    <text class="mono" x="70" y="381" font-size="19" fill="#a95d39">01</text>
+    <text x="110" y="382" font-size="26" font-weight="650">预测擂台</text>
+    <text x="70" y="412" font-size="20" fill="#666d64">Forecast arena</text>
+    <text class="mono" x="448" y="381" font-size="19" fill="#a95d39">02</text>
+    <text x="488" y="382" font-size="26" font-weight="650">PSI 决策台</text>
+    <text x="448" y="412" font-size="20" fill="#666d64">Inventory scenarios</text>
+    <text class="mono" x="826" y="381" font-size="19" fill="#a95d39">03</text>
+    <text x="866" y="382" font-size="26" font-weight="650">品类行动台</text>
+    <text x="826" y="412" font-size="20" fill="#666d64">Category actions</text>
+  </g>
+
+  <!-- Schematic model alternatives: no fabricated accuracy or improvement claims. -->
+  <g id="forecast-evidence" class="trace">
+    <path d="M70 497 H355" stroke="#d8d5cb"/>
+    <path d="M72 480 L93 468 L114 475 L135 453 L156 472 L177 461 L198 477 L219 451 L240 455 L261 437 L282 450 L303 432 L324 452 L353 437" stroke="#35463f" stroke-width="2.4"/>
+    <path d="M72 475 L93 472 L114 467 L135 466 L156 469 L177 468 L198 464 L219 461 L240 457 L261 454 L282 451 L303 448 L324 448 L353 446" stroke="#8b9a9d" stroke-width="2" stroke-dasharray="4 5"/>
+    <path id="forecast-trace" class="forecast-motion" pathLength="1" d="M72 481 L93 474 L114 475 L135 458 L156 469 L177 458 L198 469 L219 455 L240 461 L261 445 L282 455 L303 440 L324 447 L353 442" stroke="#b7653e" stroke-width="3"/>
+  </g>
+  <text class="sans" x="70" y="526" font-size="18" fill="#6d7269">七种模型 / 7 models</text>
+
+  <!-- Daily stock flow is a scenario, rather than a historical observation. -->
+  <g id="inventory-scenario" class="trace">
+    <path d="M448 497 H733" stroke="#d8d5cb"/>
+    <path d="M450 439 H475 V446 H500 V455 H525 V462 H550 V475 H575 V485 H600 V490 H625 V493 H650 V495 H675 V496 H730" stroke="#839393" stroke-width="2" stroke-dasharray="4 5"/>
+    <path id="stock-trace" class="stock-motion" pathLength="1" d="M450 439 H475 V446 H500 V455 H525 V462 H550 V475 H575 V434 H600 V443 H625 V454 H650 V463 H675 V473 H700 V482 H730" stroke="#b7653e" stroke-width="3"/>
+    <path d="M575 425 V489" stroke="#c5b7a3" stroke-width="1" stroke-dasharray="2 5"/>
+  </g>
+  <text class="sans" x="448" y="526" font-size="18" fill="#6d7269">服务目标 / 90 · 95 · 98%</text>
+
+  <!-- ABC–XYZ classification leads to a human-reviewed action, not an order. -->
+  <g id="category-review">
+    <g fill="#d6d8ce">
+      <rect x="826" y="431" width="31" height="16"/><rect x="863" y="431" width="31" height="16"/><rect x="900" y="431" width="31" height="16"/>
+      <rect x="826" y="453" width="31" height="16"/><rect x="863" y="453" width="31" height="16"/><rect x="900" y="453" width="31" height="16"/>
+      <rect x="826" y="475" width="31" height="16"/><rect x="863" y="475" width="31" height="16"/><rect x="900" y="475" width="31" height="16"/>
+    </g>
+    <rect id="selected-segment" class="decision-cell" x="826" y="431" width="31" height="16" fill="#b7653e"/>
+    <path class="trace" d="M949 461 H979 M973 455 L979 461 L973 467" stroke="#b5b8aa" stroke-width="1.6"/>
+    <g stroke="#bbc0b3" stroke-width="2"><path d="M998 438 H1126 M998 460 H1095 M998 482 H1110"/></g>
+    <path id="review-trace" class="trace review-motion" pathLength="1" d="M993 430 L998 435 L1007 424 M993 452 L998 457 L1007 446" stroke="#b7653e" stroke-width="2.8"/>
+  </g>
+  <text class="sans" x="826" y="526" font-size="18" fill="#6d7269">ABC–XYZ / 人工复核</text>
+
+  <g id="workflow-arrows" class="trace" stroke="#adb2a5" stroke-width="1.5">
+    <path d="M380 461 H411 M404 454 L411 461 L404 468"/>
+    <path d="M758 461 H789 M782 454 L789 461 L782 468"/>
+  </g>
+
+  <g id="footer" class="mono" font-size="15" fill="#a7afa1">
+    <text x="64" y="577">EVIDENCE → SCENARIO → DECISION</text>
+    <text class="sans" x="1136" y="577" text-anchor="end">流程示意 / Conceptual workflow</text>
+  </g>
+</svg>
