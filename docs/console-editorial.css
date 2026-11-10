@@ -1,0 +1,261 @@
+/* App 01 / Operations folio. Warm paper, ink, and a single signal color. */
+:root{
+  --canvas:#f2efe8;--surface:#fffdf8;--surface-soft:#f8f5ee;
+  --navy:#222723;--navy2:#333a34;--ink:#242a26;--muted:#746f66;
+  --line:#d9d2c6;--teal:#bb5c36;--teal2:#cc6b40;
+  --blue:#536b72;--amber:#a56e2d;--red:#aa4939;--panel:#fffdf8;
+  font-family:'Avenir Next','Noto Sans SC','PingFang SC',sans-serif;
+  color:var(--ink);background:var(--canvas);
+}
+body{background:var(--canvas);color:var(--ink)}
+::selection{background:#eac6ac;color:#251f19}
+a:hover{color:var(--teal)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #bb5c36;outline-offset:3px}
+
+/* A drawn route replaces the generic app badge. */
+.topbar{background:#202521;color:#f7f3e9;border-bottom:1px solid #3e443e;box-shadow:none;min-height:70px}
+.brand-mark{width:42px;height:42px;flex:none;border:1px solid #646b63;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
+.brand-mark svg{width:32px;height:32px;fill:none;stroke:#d67a4f;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.brand-mark svg circle{fill:#202521;stroke:#d67a4f}
+.brand-copy small{color:#c5805d;letter-spacing:.17em;font-size:8px}
+.brand-copy strong{font-weight:750;letter-spacing:-.035em}
+.brand-copy>span,.topbar-right{color:#d1c8b8}
+.topbar-right a{font-weight:600;border-bottom:1px solid transparent;padding-bottom:2px}
+.topbar-right a:hover{color:#f7f3e9;border-color:#d67a4f}
+.topbar-date b{color:#f7f3e9}
+.data-mode,.data-mode.demo{border-radius:0;background:transparent;border:1px solid #697066;color:#e5ddce;letter-spacing:.04em}
+
+/* The control rail reads like an index, not a stack of cards. */
+.workbench-rail{background:#ece8df;border-color:#d3cbbd}
+.rail-heading{background:#2d332d;border-left:4px solid #c9663b;border-radius:0;box-shadow:none;padding:19px 17px 20px}
+.rail-heading small{color:#d79a76}
+.rail-heading strong{font-size:20px;letter-spacing:-.04em}
+.rail-heading span{color:#d4d0c5}
+.navigation-row{border-bottom:0}
+.main-nav{gap:2px}
+.main-nav button,.main-nav button.active{border-radius:0;box-shadow:none;transition:background .12s,color .12s}
+.main-nav button{border:0;color:#5e625c}
+.main-nav button.active{background:#343a34;border:0;color:#fffdf8}
+.main-nav button:hover:not(.active){background:#f6f2e9;transform:none}
+.main-nav button>span{color:#a55a3a}
+.main-nav button.active>span{color:#dfb69f}
+.main-nav button small{color:#88847c}
+.main-nav button.active small{color:#d2cbc0}
+.utility-nav{border-color:#d3cbbd}
+.utility-nav button{color:#686961;border-radius:0}
+.utility-nav button.active,.utility-nav button:hover{background:#fffaf2;color:#a94f2e}
+.utility-nav b{background:#e3d5c8;border-radius:0;color:#9c5132}
+.scope-panel,.source-panel{border:1px solid #d6cfc1;border-radius:0;background:#f8f5ee}
+.scope-panel summary,.source-panel summary{background:#f8f5ee}
+.scope-panel summary span,.source-panel summary span{color:#323a33}
+.scope-panel summary strong,.source-panel summary b{color:#77766e}
+.scope-panel[open] summary,.source-panel[open] summary{border-color:#ded8cd}
+.scope-bar{background:#fffdf8}
+.scope-field,.scope-field select{color:#4a514b}
+.scope-field select,.control-grid input,.control-grid select,.table-controls input,.table-controls select,.table-search input,.detail-actions textarea{background:#fffdf8;border:1px solid #cfc8ba;border-radius:0;color:#252b26}
+.scope-field select:hover,.control-grid input:hover,.control-grid select:hover,.table-controls input:hover,.table-controls select:hover,.table-search input:hover{border-color:#a58b77}
+.scope-count{color:#8f5e43}
+.trust-banner,.trust-banner.demo{background:#f8f0e4!important;color:#695e50!important;border:0;border-radius:0}
+.trust-banner strong,.trust-banner.demo strong{color:#8d4e30!important}
+.trust-banner.warning{background:#f6e8df!important;color:#794b3b!important}
+
+/* Context is a paper dossier, separated by tone and typography. */
+.workbench-main{background:var(--canvas)}
+.decision-context,body[data-mode="synthetic"] .decision-context{background:#fffdf8;color:#242a26;border:1px solid #ddd7cb;border-radius:0;box-shadow:none;gap:32px;padding:27px 30px}
+.context-eyebrow{color:#8b7c6c;letter-spacing:.1em}
+.context-dot{color:#b7a896}
+.decision-context h1{color:#212722;font-weight:760;letter-spacing:-.05em;font-size:clamp(29px,2.4vw,39px);margin:12px 0 9px}
+.context-main>p{color:#5e625b}
+.context-update{background:transparent;color:#755a48;border-top:1px solid #d9d2c6;border-radius:0;padding:10px 0 0;margin-top:16px}
+.context-update::before,body[data-mode="synthetic"] .context-update::before{background:#8a9288;box-shadow:none;border-radius:0;width:5px;height:5px}
+.context-chips{gap:0 13px}
+.context-chip{background:transparent;border:0;border-top:1px solid #d8d0c2;border-radius:0;padding:11px 0 8px}
+.context-chip small{color:#8a7868;font-size:9px}
+.context-chip strong{color:#2b312b;font-size:12px}
+.context-edit{border:1px solid #bbb3a5;color:#484d45;border-radius:0}
+.context-edit:hover{background:#343a34;color:#fff}
+
+/* Measures use typographic rhythm and shared baselines. */
+.scope-kpis,.category-kpis{gap:0;margin:18px 0 14px;background:#fffdf8;border:1px solid #d9d2c6}
+.scope-kpi,.category-kpi{min-width:0;min-height:102px;padding:16px 19px;background:transparent;border:0;border-right:1px solid #e0d9cd;border-radius:0;box-shadow:none}
+.scope-kpi:last-child,.category-kpi:last-child{border-right:0}
+.scope-kpi.risk,.scope-kpi.alert{background:transparent;border-color:#e0d9cd}
+.scope-kpi span,.category-kpi span{color:#6d6c63}
+.scope-kpi strong,.category-kpi b{color:#242a26;font-variant-numeric:tabular-nums;font-weight:720;letter-spacing:-.055em}
+.scope-kpi.accent strong,.scope-kpi.risk strong,.scope-kpi.alert strong,.category-kpi:nth-child(3) b{color:#a85432}
+.scope-kpi small,.category-kpi small{color:#89857c}
+.metric-basis,.scope-kpi.accent .metric-basis,.scope-kpi.risk .metric-basis{background:#eee7db;color:#7a6655;border-radius:0}
+.coverage-disclosure{border-color:#d9d2c6;background:#fffdf8;border-radius:0}
+.coverage-disclosure summary,.coverage-disclosure summary span{color:#555d54}
+.coverage-cell,.coverage-note{background:#faf7f1}
+.coverage-cell strong{color:#313934}
+.coverage-cell.coverage-warn strong{color:#a85a36}
+.coverage-strip{background:#e3dccf;border-color:#e3dccf}
+
+/* Flat sheets and restrained typography replace the SaaS card language. */
+.view{padding-top:29px}
+.view-index,.panel-overline{color:#81786d;letter-spacing:.15em;font-weight:700}
+.view-heading h1,.view-heading h2{color:#222824;font-weight:760;font-size:clamp(26px,2.2vw,35px);letter-spacing:-.045em}
+.view-heading p:not(.view-index){color:#6f7068;max-width:780px}
+.view-status,.view-status.warning{background:#eee6d8;color:#8e563a;border:0;border-radius:0}
+.panel{background:#fffdf8;border:1px solid #d9d2c6;border-radius:0;box-shadow:none}
+.panel-heading{border-bottom:1px solid #e4ddd1;padding-bottom:12px;margin-bottom:16px}
+.panel-heading h2,.panel h2,.service-head h2{color:#252b27;font-weight:720;letter-spacing:-.035em}
+.panel-foot,.chart-caption,.model-compare-note{color:#77756e}
+.small-chip{background:#eee8dd;color:#775c49;border-radius:0}
+.panel-figure{color:#a45332}
+.legend{color:#746e65}
+.legend-actual{background:#526b70}
+.legend-model{background:#c1643b}
+.chart-empty{color:#756f66;background:#f8f4ec;border:1px dashed #d8cdbd;border-radius:0}
+.interpretation .evidence-callout,.interpretation .evidence-callout.warn,.model-insight,.model-insight.warn,.scenario-live,.segment-status,.negative-result,.method-banner,.psi-simulation-note{background:#f7f1e6;color:#6f523f;border:0;border-radius:0}
+
+/* Forecast comparison uses ink, a warm selection, and fine ruled rows. */
+.model-summary>div{background:#f8f5ee;border-color:#e1d9cb;border-radius:0}
+.model-summary span,.model-compare-toolbar span{color:#777269}
+.model-summary strong,.model-compare-toolbar strong{color:#2a302a}
+.model-compare-scroll{border-color:#ddd5c8;border-radius:0}
+.model-compare-table th{color:#665e53;background:#f0eae0}
+.model-compare-table td{border-color:#eee8de}
+.model-compare-table tr.is-current{background:#f8ede4}
+.model-compare-table tr.is-current td:first-child{box-shadow:none;font-weight:700}
+.model-apply{color:#2f3c35}
+.model-apply:hover strong{color:#a94f30}
+.model-apply small{color:#79756e}
+.wape-track{background:#e9e1d5;border-radius:0}
+.wape-track i{background:#8b9290;border-radius:0}
+.model-compare-table tr.is-current .wape-track i{background:#bd633e}
+.model-compare-table .delta-better{color:#506c53}
+.model-compare-table .delta-worse{color:#a55236}
+.model-compare-actions select{background:#fffdf8;border-color:#cfc8ba;border-radius:0;color:#333b34}
+.model-compare-actions button[aria-pressed="true"]{background:#eee9df;border-color:#a49c8e;color:#3d433d}
+.chart-model-option{background:#faf8f3;border-color:#ded7cb;border-radius:0}
+.chart-model-option:hover{background:#f5f2eb;border-color:#bdb5a8}
+.chart-model-option.is-checked{background:#f1eee7;border-color:#a9a294;box-shadow:none}
+.chart-model-option.is-decision{border-color:#686f66}
+.chart-model-copy strong{color:#303731}
+.chart-model-copy small,.model-chart-key,.model-chart-header p{color:#78756e}
+.chart-model-option input{accent-color:#b85f3d}
+.model-chart-actions strong{color:#86563f}
+.model-chart-key i{border-color:#272d29}
+
+/* A planning sheet rather than a dashboard of rounded tiles. */
+.service-card{border-color:#d9d2c6;background:#fffdf8;border-radius:0}
+.service-card:hover{border-color:#aaa394}
+.service-card.active{border:1px solid #636a60;background:#f2f0e8;border-radius:0;padding:15px}
+.service-card-head,.service-card-grid span{color:#756f64}
+.service-card-head b,.service-card-grid strong{color:#29302a}
+.service-card.active .service-card-grid strong{color:#a95534}
+.scenario-impact{background:#292e28;color:#f8f3e9;border-color:#292e28}
+.scenario-impact h2{color:#fff9ee}
+.scenario-impact .panel-overline{color:#d28b65}
+.scenario-impact .impact-row{border-color:#4c5148;color:#e2ded4}
+.scenario-impact .impact-row b{color:#fff9ed}
+.impact-big{color:#e8aa7d}
+.impact-big small{color:#d2c9b9}
+.reconcile-item{border-color:#e5ddd1;color:#746e64}
+.reconcile-item:last-child{color:#a85634}
+.reconcile-item b{color:#313a32}
+.psi-daily-details{border-color:#ded7cb}
+.psi-daily-details summary{color:#a95534}
+
+/* Category matrix: a sober analysis grid with one active signal. */
+.matrix-cell{background:#f9f6ef;border-color:#ddd5c8;border-radius:0}
+.matrix-cell:hover,.matrix-cell.active,.matrix-cell.n.active{background:#ebe9df;border-color:#666d63}
+.matrix-cell.n{background:#f0eee8}
+.matrix-cell b{color:#363c34}
+.matrix-cell.active b{color:#a84d2d}
+.matrix-cell small{color:#77746a}
+.matrix-label{color:#85634e}
+.signal-row{border-color:#e5ded3}
+.signal-row>span{color:#aa6342}
+.signal-row strong{color:#303731}
+.signal-row small{color:#837f76}
+.signal-row b{color:#a75533}
+.action-table tbody tr.selected{background:#f9eee3}
+.detail-header small{color:#a15e3f}
+.detail-header p{color:#77746c}
+.detail-section{border-color:#e3dbcf}
+.detail-grid div{background:#f8f4ec;border-color:#e2dace}
+.detail-grid span,.detail-location{color:#777167}
+.detail-location{border-color:#e8e0d5}
+.detail-note{background:#f7f0e5;border-left:0;color:#695a4a}
+
+/* Dense operational surfaces stay readable, with color reserved for action. */
+thead{background:#f0ebe2}
+th{color:#665f55;border-color:#dcd4c8}
+td{border-color:#eee7dc;color:#333a33}
+tbody tr:hover{background:#faf5ec}
+.table-wrap{border-color:#e2dacd}
+.table-controls label,.control-grid label,.table-search{color:#6e6c63}
+.primary-button,.decision-buttons button:first-child{background:#2d342e;border-color:#2d342e;color:#fffaf1;border-radius:0}
+.primary-button:hover:not(:disabled),.decision-buttons button:first-child:hover{background:#a95634;border-color:#a95634}
+.secondary-button,.decision-buttons button{background:#fffdf8;border-color:#bfb5a5;color:#423f37;border-radius:0}
+.secondary-button:hover,.decision-buttons button:hover{background:#f4e9dc;border-color:#b77550;color:#914f34}
+.subtle-button,.pager button{background:transparent;border:1px solid #c7b8a5;color:#8c4c31;border-radius:0}
+.subtle-button:hover,.pager button:hover:not(:disabled){background:#f4e9dc;color:#8c4c31}
+.synthetic-launch{background:#f5ecdf;border-color:#d8c5ae;border-left:0}
+.synthetic-launch small,.synthetic-actions a{color:#a45736}
+.synthetic-launch strong{color:#303630}
+.synthetic-launch p{color:#6d665b}
+.evidence-card,.evidence-panel,.review-item,.data-stats div{background:#fffdf8;border-color:#d9d2c6}
+.evidence-card small,.evidence-card b,.evidence-panel .detail-row strong{color:#955032}
+.data-stats span,.evidence-card p,.evidence-panel p{color:#77746c}
+.upload-box{background:#faf7f0;border-color:#cbbba8}
+.upload-box span,.upload-box small,.quality-item,.review-item small{color:#7e796f}
+.upload-box input{color:#625c52}
+.quality-item,.review-item,.evidence-panel .detail-row{border-color:#e5ddd1}
+.review-item b{color:#a95534}
+.psi-daily-details summary:focus-visible{outline-color:#bb5c36}
+footer{background:#eae5da;border-top:1px solid #d4cbbd;color:#67675e}
+
+@media(max-width:1100px){
+  .workbench-rail{border-color:#d3cbbd}
+  .navigation-row{border:0}
+  .main-nav button.active{border:0;background:#343a34}
+  .main-nav button{border:0}
+  .scope-panel,.source-panel{background:#fffdf8}
+}
+@media(max-width:610px){
+  .topbar{min-height:64px}
+  .brand-mark{width:38px;height:38px}
+  .brand-mark svg{width:28px;height:28px}
+  .decision-context,body[data-mode="synthetic"] .decision-context{padding:20px 19px;gap:16px}
+  .decision-context h1{font-size:27px}
+  .scope-kpi,.category-kpi{padding:13px 12px}
+  .scope-kpi:nth-child(even),.category-kpi:nth-child(even){border-right:0}
+  .model-chart-header p{font-size:10px}
+  .chart-model-option{min-height:50px}
+}
+
+/* Decision scope stays above supporting workflows and fits the first desktop screen. */
+.rail-inner{top:70px;max-height:calc(100vh - 70px);padding:15px 12px 20px}
+.rail-heading{display:none}
+.navigation-row{margin:0 0 11px}
+.navigation-row::before{content:'决策视图';display:block;margin:0 0 5px 10px;color:#8b7766;font:700 10px 'IBM Plex Mono','PingFang SC',sans-serif;letter-spacing:.12em}
+.main-nav button{padding:9px 10px 8px}
+.scope-panel{margin:0 0 13px}
+.scope-panel summary{min-height:48px;padding:10px 30px 9px 12px}
+.scope-panel summary::after{top:11px}
+.scope-bar{gap:9px;padding:12px}
+.scope-field{gap:4px}
+.scope-field select{height:36px}
+.scope-count{line-height:1.3}
+.utility-nav{margin:0 0 12px;padding:10px 0 0;gap:1px}
+.utility-label{display:block;margin:0 0 3px 10px;color:#8b7766;font:700 10px 'IBM Plex Mono','PingFang SC',sans-serif;letter-spacing:.12em}
+.utility-nav button{min-height:35px;padding:8px 11px}
+
+@media(max-width:1100px){
+  .rail-inner{position:static;max-height:none;padding:10px 18px 13px}
+  .navigation-row{margin:0;display:block;grid-column:1/-1}
+  .navigation-row::before,.utility-label{display:none}
+  .scope-panel,.source-panel{grid-column:1/-1;margin:0}
+  .utility-nav{grid-column:1/-1;display:flex;align-items:center;justify-content:flex-start;gap:5px;margin:0;padding:5px 0 0;border-top:1px solid #d3cbbd}
+  .utility-nav button{min-height:34px;padding:7px 10px}
+}
+@media(max-width:610px){
+  .rail-inner{padding:8px 12px 10px}
+  .navigation-row{margin:0}
+  .utility-nav{justify-content:space-between;gap:3px;margin:0;padding:5px 0 0}
+  .utility-nav button{flex:1;text-align:center;padding:7px 3px}
+}

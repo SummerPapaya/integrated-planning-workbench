@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>App01 × Power BI｜能力对照与改进路线</title>
+  <style>
+    :root{--ink:#203744;--muted:#627783;--line:#d9e3e5;--paper:#f3f6f7;--white:#fff;--navy:#102c3b;--teal:#087f78;--teal-light:#e9f4f1;--amber:#93672c;--amber-light:#fff6e8;--red:#a8584d;--red-light:#fff2ef}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--teal);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+    .top{background:var(--navy);color:#e9f4f3}.top-inner{max-width:1220px;margin:auto;padding:18px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:11px;letter-spacing:.14em;font-weight:800;text-transform:uppercase}.top a{color:#d9eeea;text-decoration:none;font-size:12px}.top a:hover{text-decoration:underline}
+    main{max-width:1220px;margin:auto;padding:42px 30px 72px}.eyebrow{margin:0 0 9px;color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(29px,4vw,46px);line-height:1.17;letter-spacing:-.045em;margin:0 0 16px}.hero p{max-width:840px;margin:0;color:var(--muted);font-size:16px}.hero .meta{margin-top:17px;display:flex;flex-wrap:wrap;gap:8px}.chip{display:inline-block;border:1px solid var(--line);background:var(--white);padding:4px 9px;border-radius:3px;color:#536d79;font-size:11px;font-weight:700}.hero-rule{margin-top:32px;padding:25px 28px;background:var(--teal-light);border-left:4px solid var(--teal)}.hero-rule .label{font-size:11px;font-weight:800;color:var(--teal);letter-spacing:.1em}.hero-rule strong{display:block;font-size:20px;line-height:1.5;letter-spacing:-.02em;margin-top:5px}.hero-rule p{font-size:13px;max-width:none;margin-top:7px;color:#41685f}
+    .section{margin-top:52px}.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:17px}.section-head span{font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--teal)}h2{font-size:23px;line-height:1.3;letter-spacing:-.035em;margin:0}h3{font-size:16px;line-height:1.4;margin:0 0 9px}.section-intro{margin:-5px 0 17px;color:var(--muted);font-size:13px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{background:var(--white);border:1px solid var(--line);padding:22px 24px}.card .tag{display:inline-block;font-size:10px;letter-spacing:.12em;font-weight:800;color:var(--teal);margin-bottom:10px}.card ul{margin:0;padding-left:19px}.card li+li{margin-top:9px}.card li{font-size:13px;color:#425c69}.card li::marker{color:var(--teal)}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--white)}table{border-collapse:collapse;width:100%;min-width:850px;font-size:12px}th{text-align:left;background:#eaf0f2;color:#405d6a;font-size:11px;letter-spacing:.04em}th,td{padding:15px 17px;vertical-align:top;border-bottom:1px solid var(--line)}tbody tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:#fafcfc}td:first-child{width:13%;font-weight:800;color:#234652}td:nth-child(2),td:nth-child(3){width:36%}td:last-child{width:15%;font-weight:800;color:var(--teal)}.note{font-size:12px;color:var(--muted);margin:10px 0 0}
+    .limits{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px}.limit{border-top:1px solid var(--line);padding-top:15px}.limit .number{font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--red);margin-bottom:4px}.limit p{margin:0;color:#4f6772;font-size:13px}.priority{display:grid;grid-template-columns:90px 1fr 1fr;gap:18px;border-top:1px solid var(--line);padding:18px 0}.priority:last-child{border-bottom:1px solid var(--line)}.priority b{font:800 12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--teal)}.priority p{margin:0;font-size:13px;color:#4f6772}.priority strong{display:block;font-size:13px;color:var(--ink);margin-bottom:4px}.p1-checks{border:1px solid var(--line);background:#fff;padding:20px 23px;margin:7px 0 19px}.p1-checks .label{font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--teal);letter-spacing:.1em}.p1-checks h3{margin:4px 0 6px}.p1-checks>p{margin:0 0 15px;font-size:12px;color:var(--muted)}.checkgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 25px}.checkgrid div{border-top:1px solid var(--line);padding-top:10px}.checkgrid b{font-size:12px;color:var(--ink)}.checkgrid p{font-size:12px;color:#536e7a;margin:4px 0 0}.p1-checks>a{display:inline-block;margin-top:17px;font-size:12px;font-weight:800}.recommendation{margin-top:23px;background:var(--amber-light);border-left:4px solid var(--amber);padding:18px 22px}.recommendation strong{display:block;color:#785627;font-size:13px}.recommendation p{margin:4px 0 0;color:#665843;font-size:13px}
+    .sources{font-size:12px;color:var(--muted)}.sources p{margin:0 0 9px}.source-links{display:flex;flex-wrap:wrap;gap:7px 17px}.source-links a{font-size:12px}.back{display:inline-block;margin-top:30px;font-size:12px;font-weight:700}footer{margin-top:45px;padding-top:15px;border-top:1px solid var(--line);font-size:11px;color:#84969d}
+    @media(max-width:750px){.top-inner,main{padding-left:18px;padding-right:18px}.top-inner{align-items:start}.top a{max-width:130px;text-align:right}.two-col,.limits,.checkgrid{grid-template-columns:1fr}.priority{grid-template-columns:1fr;gap:8px}.hero-rule{padding:20px}.section{margin-top:42px}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="top-inner"><div class="brand">SUPPLY CHAIN PORTFOLIO / APP01 REVIEW</div><a href="../#category">打开 App01 品类行动台 ↗</a></div></header>
+  <main>
+    <section class="hero" id="top">
+      <p class="eyebrow">Rendered canvas preview · 2026.10.13</p>
+      <h1>App01 × Power BI<br>能力对照与改进路线</h1>
+      <p>比较当前公开样本版 Integrated Planning Workbench，与已接入企业数据、完成治理配置的 Power BI 方案。Power BI 的具体能力取决于许可证、数据架构和集成配置。</p>
+      <div class="meta"><span class="chip">3 个业务大类</span><span class="chip">9 条选定产品线</span><span class="chip">1,482 SKU</span><span class="chip">20 家样本门店</span></div>
+      <div class="hero-rule"><span class="label">建议定位</span><strong>App01 展示决策过程；Power BI 承接持续监控。两者应共享可信数据层。</strong><p>App01 负责预测比较、PSI 情景和人工判断；Power BI 负责已发生的运营 KPI、跨部门分析与分发。不要把任何一方当成另一方的简单替代。</p></div>
+    </section>
+
+    <section class="section" id="strengths"><div class="section-head"><span>01</span><h2>各自最强的场景</h2></div>
+      <div class="two-col">
+        <article class="card"><span class="tag">APP01 / 决策原型</span><h3>让计划员操作一条完整决策链</h3><ul><li>现场改预测模型、服务目标、交期和容量，观察补货量与模拟缺口变化。</li><li>保留低样本、弱模型、未映射预测，以及增加安全量却未改善缺口的负结果。</li><li>从业务大类下钻至 SKU 与门店，人工复核后才导出建议。</li></ul></article>
+        <article class="card"><span class="tag">POWER BI / 企业监控</span><h3>让多人使用同一套运营事实</h3><ul><li>统一语义模型、数据刷新、权限与组织内分发。</li><li>多维筛选、钻取和跨报表分析适合销售、库存、采购与财务的日常监控。</li><li>参数、Power Apps 与 Fabric 扩展可承接情景和回写，但需要额外建设。</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="comparison"><div class="section-head"><span>02</span><h2>按业务能力比较</h2></div>
+      <p class="section-intro">此处比较的是当前实现与配置完备的企业解决方案；并不意味着 Power BI 产品本身无法实现预测、情景或动作。</p>
+      <div class="table-wrap"><table><thead><tr><th>维度</th><th>当前 App01</th><th>企业 Power BI 方案</th><th>判断</th></tr></thead><tbody>
+        <tr><td>日常监控</td><td>把预测、库存情景与行动放在一个工作流；支持大类、产品线和 SKU 下钻。</td><td>共享语义模型、交叉筛选、钻取与定时刷新更适合跨团队稳定 KPI 监控。</td><td>Power BI 更强</td></tr>
+        <tr><td>预测证据</td><td>七种模型先在较早 56 天选模，再在最后 28 天独立时间测试；并列展示误差、低样本回退和层级差额。</td><td>可展示预计算预测及误差，也可接入外部模型；训练和严格回测通常放在上游。</td><td>App01 故事更集中</td></tr>
+        <tr><td>PSI 情景</td><td>交期、服务目标、缓冲和容量更改后，按 SKU × 门店重算库存及模拟未满足。</td><td>What-if 参数可驱动报表计算；复杂逐日、逐 SKU 模拟通常需要预计算或外部服务。</td><td>App01 交互更直接</td></tr>
+        <tr><td>人工动作</td><td>SKU 建议、备注、纳入／暂缓／拒绝及 CSV 导出构成轻量闭环，但只在浏览器会话内。</td><td>可结合 Power Apps 或 Fabric translytical task flows 做回写和流程；需要开发与权限配置。</td><td>企业能力取决于集成</td></tr>
+        <tr><td>数据与治理</td><td>本地 CSV 或固定公开样本；没有后台刷新、身份权限、持久审批或 ERP/WMS 写入。</td><td>可配置刷新、增量刷新、行级安全、审计和部署流程，便于企业分发维护。</td><td>Power BI 更强</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="section" id="limits"><div class="section-head"><span>03</span><h2>当前案例必须讲清楚的边界</h2></div>
+      <div class="limits">
+        <article class="limit"><div class="number">01 / 样本与库存</div><h3>不能代表全网库存</h3><p>演示选取 20 家鞋类活跃门店和九条产品线；Junior Apparel 仅覆盖其中 14 家门店。库存是有效期间记录，并非截止日盘点。</p></article>
+        <article class="limit"><div class="number">02 / 需求与服务水平</div><h3>销售不等于完整需求</h3><p>没有缺货暴露、真实 PO/ETA 与交期分布；90%／95%／98% 是安全量情景参数，不能解释为已验证的服务达成概率。</p></article>
+        <article class="limit"><div class="number">03 / 模型证据</div><h3>择优结果仍可能偏乐观</h3><p>已将选模期与最后 28 天独立测试分开，测试结果不参与择优；但两期预测跨度不同，且 168 天历史未覆盖完整年度季节性。低销量 SKU 的 WAPE 仍不稳定。</p></article>
+        <article class="limit"><div class="number">04 / AI 与运营成熟度</div><h3>目前是模型与规则解释</h3><p>当前实现有统计／机器学习预测和规则化文案，没有已部署的生成式 AI 服务，也没有持久审批、权限、后台任务或系统回写。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap"><div class="section-head"><span>04</span><h2>改进顺序与完成判据</h2></div>
+      <div class="priority"><b>P0<br>已完成</b><div><strong>证据口径已落地</strong><p>顶部 KPI 标注观测、预测、独立测试或情景模拟；展示截止日、SKU／门店覆盖与库存、交期缺失率；模型先用 56 天选模，再用最后 28 天独立检验。</p></div><div class="proof"><strong>已验证</strong><p>行动 CSV 包含完整数据 SHA-256、模型／规则版本、情景编号与全部假设；弱模型和后段误差恶化照实呈现。<a href="../#forecast">打开 App01 ↗</a></p></div></div>
+      <div class="priority"><b>P1<br>部分落地</b><div><strong>计划输入与执行证据原型</strong><p>已支持在途 ETA、商品交期 / MOQ / 箱规、可售库存进入 PSI；促销、后续销量与缺货暴露、执行回执可按统一键接入。促销只作标注，缺货日未测损失从误差比较排除。</p></div><div class="proof"><strong>目前能证明</strong><p>合成测试验证可售量改变情景、同情景建议与执行对账，以及有记录日的预测与观测比较。公开样本无真实运营回执，服务目标仍未校准。<a href="../#evidence">打开 P1 证据视图 ↗</a></p></div></div>
+      <div class="p1-checks" id="p1-business-checks"><span class="label">P1 / BUSINESS VALIDATION</span><h3>业务检验点</h3><p>先固定计划批次、SKU × 门店范围和观测日期；每项都报告覆盖分母、未匹配量与“无法判定”原因。以下是待企业真实数据验证的验收问题，并非现有案例已达标的结果。</p><div class="checkgrid">
+        <div><b>库存与 PO 是否可信</b><p>逐 SKU × 门店把可售量与 WMS 对账；逐 PO 行检查 ETA、未收余额、部分到货和交期 / MOQ / 箱规是否符合合同。</p></div>
+        <div><b>预测是否改善真实决策</b><p>同一批后续可比较日期，报告 WAPE、正负 Bias 和排除的缺货日；与朴素基线按相同样本比较，避免只挑好看的 SKU。</p></div>
+        <div><b>促销与缺货是否解释误差</b><p>按已标注促销日检查分组误差和样本量；缺货小时只表明暴露，未测损失不能当零，日历缺失不能视为没有活动。</p></div>
+        <div><b>建议是否落地并改善服务</b><p>同情景追建议、审批、PO 与收货的数量差；跨多个批次对照实际缺口与库存代价，再校准 90/95/98% 情景参数。</p></div>
+      </div><a href="../production-readiness.html#business-checks">查看 7 项检验的口径、验收问题和无法判定情形 ↗</a></div>
+      <div class="priority"><b>P2<br>工作闭环</b><div><strong>版本化、审批与集成</strong><p>持久保存情景和人工决定，记录负责人、时间及执行状态；共享数据层，让 Power BI 监控事实、App01 处理情景。</p></div><div class="proof"><strong>完成后应能证明</strong><p>跨会话复盘、角色权限可用，建议与采购单严格区分。</p></div></div>
+      <div class="recommendation"><strong>本轮新增：生产化架构与差距清单</strong><p><a href="../production-readiness.html">查看架构与差距清单 ↗</a>：逐项标明 P1 哪些只是 CSV 输入和本地对照，哪些仍需企业源数据、持续运行和审批。Power BI 对照案例的单独规划也已就绪：<a href="power-bi-counterpart-project-plan.html">查看 Power BI 项目规划 ↗</a>。</p></div>
+    </section>
+
+    <section class="section sources" id="sources"><div class="section-head"><span>05</span><h2>依据与延伸阅读</h2></div>
+      <p>App01：当前仓库的 planning-console README、demo.json、console.js、planning.mjs；核对日期 2026-10-13。</p>
+      <div class="source-links"><a href="https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-drillthrough" target="_blank" rel="noopener noreferrer">Power BI 钻取</a><a href="https://learn.microsoft.com/en-us/power-bi/connect-data/refresh-data" target="_blank" rel="noopener noreferrer">数据刷新</a><a href="https://learn.microsoft.com/en-us/power-bi/connect-data/incremental-refresh-configure" target="_blank" rel="noopener noreferrer">增量刷新</a><a href="https://learn.microsoft.com/power-bi/service-admin-rls" target="_blank" rel="noopener noreferrer">行级安全</a><a href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-what-if" target="_blank" rel="noopener noreferrer">What-if 参数</a><a href="https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/powerapps-custom-visual" target="_blank" rel="noopener noreferrer">Power Apps visual</a><a href="https://learn.microsoft.com/en-us/Power-Bi/create-reports/translytical-task-flow-overview" target="_blank" rel="noopener noreferrer">Fabric translytical task flows</a><a href="https://learn.microsoft.com/power-bi/enterprise/service-admin-auditing" target="_blank" rel="noopener noreferrer">审计日志</a><a href="https://learn.microsoft.com/en-us/power-bi/create-reports/deployment-pipelines-overview" target="_blank" rel="noopener noreferrer">部署流水线</a></div>
+    </section>
+    <a class="back" href="#top">返回顶部 ↑</a><footer>APP01 × POWER BI / RENDERED ANALYSIS PREVIEW · 与 canvas 分析内容对应</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cd "$(git rev-parse --show-toplevel)"
+python3 scripts/check_push_target.py "$2"
+python3 scripts/check_public_repo.py
